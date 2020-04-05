@@ -1,0 +1,17 @@
+{
+  "name": "NotesApp",
+  "displayName": "NotesApp",
+  "expo": {
+    "name": "NotesApp",
+    "slug": "NotesApp",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
