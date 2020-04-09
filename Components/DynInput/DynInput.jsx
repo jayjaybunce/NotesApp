@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, View, TextInput, StyleSheet } from 'react-native'
 import styled, { css } from '@emotion/native'
+import { Icon } from 'react-native-elements'
 
 
 const DynInput = props => {
@@ -24,8 +25,9 @@ const DynInput = props => {
                 onChangeText={text => props.handleChange(text)}
             >
                 
-
+            
             </TextInput>
+            
         </>
     )
 }

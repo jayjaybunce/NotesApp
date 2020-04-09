@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
+import NetInfo from 'react-native-netinfo'
 import PageHeader from './Components/PageHeader/PageHeader'
 import SignUpForm from './Components/SignUpForm/SignUpForm'
 const instructions = Platform.select({
@@ -13,17 +14,33 @@ class App extends React.Component{
     signup: {
       passwordOne: '',
       paswordTwo: '',
+      user: '',
     }
+  }
+  testApiHit = () =>{
+    fetch('http://192.168.0.34:3000/notieapi/api')
+    .then(response => {
+      return response.json()
+    })
+    .then(data=>{
+      this.setState({user: data.username})
+    })
+  }
+  componentDidMount(){
+    this.testApiHit()
   }
   render(){
     return (
       <View>
+        
         <PageHeader 
           title='Create your acccount!' 
-          description="Please create an account to use Notes. Without an account, we can't let you proceed"
-
+          description="Please create an account or login to use Notes. "
+          
           />
-        <SignUpForm/>
+        <SignUpForm
+          
+        />
       </View>
     )
   }
